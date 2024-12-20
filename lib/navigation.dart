@@ -1,20 +1,21 @@
-// navigation.dart
 import 'package:flutter/material.dart';
-import 'app_bar.dart'; // Mengimpor AppBarWidget
+import 'app_bar.dart';
+import 'home_screen.dart';
+import 'story_screen.dart';
+import 'setting_screen.dart';
 
 class Navigation extends StatefulWidget {
-  const Navigation({super.key});
+  const Navigation({Key? key}) : super(key: key);
 
   @override
-  State<Navigation> createState() => _NavigationExampleState();
+  State<Navigation> createState() => _NavigationState();
 }
 
-class _NavigationExampleState extends State<Navigation> {
+class _NavigationState extends State<Navigation> {
   int currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: const AppBarWidget(),
       bottomNavigationBar: NavigationBar(
@@ -63,78 +64,9 @@ class _NavigationExampleState extends State<Navigation> {
         ],
       ),
       body: <Widget>[
-        /// Home page
-        Card(
-          shadowColor: Colors.transparent,
-          margin: const EdgeInsets.all(8.0),
-          child: SizedBox.expand(
-            child: Center(
-              child: Text(
-                'Home page',
-                style: theme.textTheme.titleLarge,
-              ),
-            ),
-          ),
-        ),
-
-        /// Story page
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.image),
-                  title: Text('Story 1'),
-                  subtitle: Text('This is a story'),
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.image),
-                  title: Text('Story 2'),
-                  subtitle: Text('This is another story'),
-                ),
-              ),
-            ],
-          ),
-        ),
-
-        /// Settings page
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.account_circle),
-                  title: Text('Account Settings'),
-                  onTap: () {
-                    // Action on tap
-                  },
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.lock),
-                  title: Text('Privacy Settings'),
-                  onTap: () {
-                    // Action on tap
-                  },
-                ),
-              ),
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.exit_to_app),
-                  title: Text('Logout'),
-                  onTap: () {
-                    // Action on tap
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
+        const HomeScreen(),
+        const StoryScreen(),
+        const SettingScreen(),
       ][currentPageIndex],
     );
   }
