@@ -31,20 +31,78 @@ class HomeScreen extends StatelessWidget {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                      'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigate to the DetailScreen with a sample story
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailScreen(
+                              story: Story(
+                                title: 'Farmhouse Lembang',
+                                description:
+                                    'A beautiful view of the farmhouse.',
+                                imageAsset:
+                                    'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
+                                subtitle: 'Travel',
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: Image.network(
+                        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg',
+                      ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                      'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigate to the DetailScreen with a sample story
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailScreen(
+                              story: Story(
+                                title: 'Photo 3',
+                                description: 'A lovely scene.',
+                                imageAsset:
+                                    'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
+                                subtitle: 'Scenic',
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: Image.network(
+                        'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg',
+                      ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                      'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg',
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigate to the DetailScreen with a sample story
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailScreen(
+                              story: Story(
+                                title: 'Farmhouse View',
+                                description: 'A scenic view of the farmhouse.',
+                                imageAsset:
+                                    'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg',
+                                subtitle: 'Vacation',
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: Image.network(
+                        'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg',
+                      ),
                     ),
                   ),
                 ],
