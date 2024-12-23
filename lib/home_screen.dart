@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_bar.dart';
+import 'detail_screen.dart';
+import 'story_list.dart';
 import 'story_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -86,43 +88,32 @@ class HomeScreen extends StatelessWidget {
             ),
             GridView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 3 / 4,
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8,
               ),
-              itemCount: popularStories.length, // Use the length of the list
+              itemCount: popularStories.length,
               itemBuilder: (context, index) {
                 final story = popularStories[index];
-                return _buildPopularStoryCard(
-                  story['title']!,
-                  story['description']!,
-                  story['image']!,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailScreen(story: story),
+                      ),
+                    );
+                  },
+                  child: _buildPopularStoryCard(
+                    story.title,
+                    story.description,
+                    story.imageAsset,
+                  ),
                 );
               },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildFeaturedCard(String title, String imageUrl) {
-    return Padding(
-      padding: const EdgeInsets.all(4.0),
-      child: Card(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Image.network(imageUrl, height: 150, fit: BoxFit.cover),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                title,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
             ),
           ],
         ),
@@ -140,7 +131,7 @@ class HomeScreen extends StatelessWidget {
         );
       },
       child: Card(
-        child: Container(
+        child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.15,
           height: MediaQuery.of(context).size.width * 0.15,
           child: Column(
@@ -149,7 +140,7 @@ class HomeScreen extends StatelessWidget {
               Icon(icon),
               Text(
                 label,
-                style: TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 12),
               ),
             ],
           ),
@@ -168,7 +159,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               title,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
           Padding(
@@ -180,27 +171,34 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Sample list of popular stories
-  final List<Map<String, String>> popularStories = [
-    {
-      'title': 'A Day at the Beach',
-      'description': 'An exciting adventure on the sandy shores.',
-      'image': 'https://via.placeholder.com/150',
-    },
-    {
-      'title': 'Mountain Adventures',
-      'description': 'Hiking through the tallest peaks.',
-      'image': 'https://via.placeholder.com/150',
-    },
-    {
-      'title': 'City Lights',
-      'description': 'Exploring the vibrant city nightlife.',
-      'image': 'https://via.placeholder.com/150',
-    },
-    {
-      'title': 'Forest Escape',
-      'description': 'A peaceful retreat in the woods.',
-      'image': 'https://via.placeholder.com/150',
-    },
+  final List<Story> popularStories = [
+    Story(
+      title: 'A Day at the Beach',
+      description: 'An exciting adventure on the sandy shores.',
+      imageAsset:
+          'https://media.istockphoto.com/id/1211311866/photo/stylish-casual-woman-enjoying-sun-at-tropical-beach.jpg?s=612x612&w=0&k=20&c=N4E7SOZpDVArDLxQNBt8KgI4xRvFW3ERx8ifaYvDXYM=',
+      subtitle: 'Adventure',
+    ),
+    Story(
+      title: 'Mountain Adventures',
+      description: 'Hiking through the tallest peaks.',
+      imageAsset:
+          'https://media.istockphoto.com/id/466464914/photo/hiker.jpg?s=612x612&w=0&k=20&c=JQsPKlROgdc_gFcMwpaER5Sk5uK9O80yZj4VB9rKQZ4=',
+      subtitle: 'Hiking',
+    ),
+    Story(
+      title: 'City Lights',
+      description: 'Exploring the vibrant city nightlife.',
+      imageAsset:
+          'https://asset.kompas.com/crops/5wkTWPxJ2WIn03K8jq3KmEnPVFA=/0x0:778x389/1200x800/data/photo/2018/11/21/1268730124.jpg',
+      subtitle: 'Urban',
+    ),
+    Story(
+      title: 'Forest Escape',
+      description: 'A peaceful retreat in the woods.',
+      imageAsset:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROuIGYKr8z0wIVgT_PEbUvtEM_CkWdQQo2zg&s',
+      subtitle: 'Nature',
+    ),
   ];
 }
