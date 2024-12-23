@@ -25,41 +25,14 @@ class DetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Stack(
-              children: <Widget>[
-                story.imageAsset.isNotEmpty
-                    ? Container(
-                        margin: const EdgeInsets.only(top: 25.0),
-                        child: Image.network(
-                          story.imageAsset,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: 250.0,
-                        ),
-                      )
-                    : const SizedBox.shrink(),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.grey,
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            story.imageAsset.isNotEmpty
+                ? Image.network(
+                    story.imageAsset,
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                    height: 250.0,
+                  )
+                : const SizedBox.shrink(),
             Container(
               margin: const EdgeInsets.only(top: 16.0),
               child: Text(
