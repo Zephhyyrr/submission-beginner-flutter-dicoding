@@ -1,4 +1,3 @@
-// app_bar.dart
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
@@ -11,6 +10,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       title: const Text(
         'StoryApp',
         style: TextStyle(color: Colors.white),
+      ),
+      iconTheme: const IconThemeData(
+        color: Colors.white, // Set the back arrow icon color to white
       ),
     );
   }

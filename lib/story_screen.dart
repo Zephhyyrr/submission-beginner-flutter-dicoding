@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app_bar.dart'; 
 import 'story_list.dart' as story_list;
 import 'detail_screen.dart';
 
@@ -8,6 +9,7 @@ class StoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const AppBarWidget(),
       body: ListView.builder(
         itemCount: story_list.storyList.length,
         itemBuilder: (context, index) {
@@ -28,6 +30,7 @@ class StoryScreen extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  // Gambar cerita
                   Expanded(
                     flex: 1,
                     child: ClipRRect(
@@ -40,6 +43,7 @@ class StoryScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  // Deskripsi cerita
                   Expanded(
                     flex: 2,
                     child: Padding(

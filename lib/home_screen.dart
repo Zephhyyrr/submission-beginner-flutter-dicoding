@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'app_bar.dart';
 import 'story_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,6 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const AppBarWidget(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -62,7 +63,10 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 GestureDetector(
                   onTap: () {
-                    MaterialPageRoute(builder: (context) => StoryScreen());
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StoryScreen()),
+                    );
                   },
                   child: Card(
                     child: Container(

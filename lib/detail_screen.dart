@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'story_list.dart';
+import 'app_bar.dart';
 
 var informationTextStyle = const TextStyle(fontFamily: 'Oxygen');
 
@@ -19,6 +20,7 @@ class DetailScreen extends StatelessWidget {
     );
 
     return Scaffold(
+      appBar: const AppBarWidget(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -27,38 +29,33 @@ class DetailScreen extends StatelessWidget {
               children: <Widget>[
                 story.imageAsset.isNotEmpty
                     ? Container(
-                        margin: const EdgeInsets.only(
-                            top: 25.0), // Memberikan jarak ke bawah status bar
+                        margin: const EdgeInsets.only(top: 25.0),
                         child: Image.network(
-                          story.imageAsset, // Menggunakan URL gambar
+                          story.imageAsset,
                           fit: BoxFit.cover,
                           width: double.infinity,
                           height: 250.0,
                         ),
                       )
                     : const SizedBox.shrink(),
-
-                // SafeArea memastikan konten tidak menutupi area status bar
-                SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.grey,
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.arrow_back,
-                              color: Colors.white,
-                            ),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.grey,
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
                           ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -123,7 +120,6 @@ class DetailScreen extends StatelessWidget {
           ],
         ),
       ),
-      // Menambahkan FloatingActionButton untuk favorite
       floatingActionButton: const FavoriteButton(),
     );
   }
@@ -133,7 +129,6 @@ class FavoriteButton extends StatefulWidget {
   const FavoriteButton({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _FavoriteButtonState createState() => _FavoriteButtonState();
 }
 
@@ -143,14 +138,14 @@ class _FavoriteButtonState extends State<FavoriteButton> {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      backgroundColor: Colors.blue, // Warna latar belakang FAB
+      backgroundColor: Colors.blue,
       child: Icon(
         isFavorite ? Icons.favorite : Icons.favorite_border,
-        color: Colors.white, // Warna ikon FAB
+        color: Colors.white,
       ),
       onPressed: () {
         setState(() {
-          isFavorite = !isFavorite; // Toggle status favorite
+          isFavorite = !isFavorite;
         });
       },
     );

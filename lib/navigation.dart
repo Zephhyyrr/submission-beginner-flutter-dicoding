@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'app_bar.dart';
 import 'home_screen.dart';
 import 'story_screen.dart';
 import 'setting_screen.dart';
@@ -17,7 +16,6 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarWidget(),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
