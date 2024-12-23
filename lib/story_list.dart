@@ -116,14 +116,16 @@ var storyList = [
     subtitle: 'Dinosaurs Walk Again',
     description:
         'During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run wild.',
-    imageAsset: 'https://example.com/jurassic-park.jpg',
+    imageAsset:
+        'https://play-lh.googleusercontent.com/proxy/gyYzLdhikv0LJIXs6YUr3jBoYvz4OmtkN_QTjV4-RPFrWG35RQGDkey3I3ZXWUvns4aI1u_goS3WAe_03vE1pLVI6nyNzpDBi7h9x0g0MDg1VPIhGw=s1920-w1920-h1080',
   ),
   Story(
     title: 'The Lord of the Rings: The Fellowship of the Ring',
     subtitle: 'A Quest to Save Middle-earth',
     description:
         'A young hobbit is tasked with an epic journey to destroy a powerful ring that could bring evil back into the world.',
-    imageAsset: 'https://example.com/lord-of-the-rings.jpg',
+    imageAsset:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwjvtARVQAFZvjgby4i1ev7I2h0OgHcG8YoQ&s',
   ),
   Story(
     title: 'Harry Potter and the Sorcerer\'s Stone',
