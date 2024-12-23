@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'story_list.dart';
 
 var informationTextStyle = const TextStyle(fontFamily: 'Oxygen');
@@ -10,16 +11,32 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Mengatur warna status bar (notification bar) menjadi biru
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Color(0xFF438BFF), // Warna biru pada status bar
+        statusBarIconBrightness: Brightness.light, // Warna ikon di status bar
+      ),
+    );
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Image.asset(story.imageAsset),
-                SafeArea(
-                  child: Padding(
+            // Gambar dengan SafeArea agar tidak menabrak status bar
+            SafeArea(
+              child: Stack(
+                children: <Widget>[
+                  story.imageAsset.isNotEmpty
+                      ? Image.network(
+                          story.imageAsset, // Menggunakan URL gambar
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: 250.0,
+                        )
+                      : const SizedBox.shrink(),
+                  Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,8 +57,8 @@ class DetailScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Container(
               margin: const EdgeInsets.only(top: 16.0),
@@ -85,18 +102,20 @@ class DetailScreen extends StatelessWidget {
             ),
             SizedBox(
               height: 150,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: story.imageUrls.map((url) {
-                  return Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.network(url),
-                    ),
-                  );
-                }).toList(),
-              ),
+              child: story.imageUrls != null && story.imageUrls!.isNotEmpty
+                  ? ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: story.imageUrls!.map((url) {
+                        return Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(url),
+                          ),
+                        );
+                      }).toList(),
+                    )
+                  : const SizedBox.shrink(),
             ),
           ],
         ),

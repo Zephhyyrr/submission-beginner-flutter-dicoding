@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'story_list.dart' as story_list; // Add an alias for the story_list.dart
+import 'story_list.dart' as story_list;
 import 'detail_screen.dart';
 
 class StoryScreen extends StatelessWidget {
@@ -8,13 +8,11 @@ class StoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Stories'),
-      ),
       body: ListView.builder(
-        itemCount: story_list.storyList.length, // Use the alias here
+        itemCount: story_list.storyList.length,
         itemBuilder: (context, index) {
-          final story = story_list.storyList[index]; // Use the alias here
+          final story = story_list.storyList[index];
+
           return InkWell(
             onTap: () {
               Navigator.push(
@@ -76,9 +74,7 @@ class StoryScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xFF438BFF),
-        onPressed: () {
-          // Tambahkan aksi untuk tombol ini jika diperlukan.
-        },
+        onPressed: () {},
         child: const Icon(
           Icons.add,
           color: Colors.white,
