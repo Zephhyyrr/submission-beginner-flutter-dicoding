@@ -65,7 +65,7 @@ class _NavigationState extends State<Navigation> {
       ),
       body: <Widget>[
         const HomeScreen(),
-        const StoryScreen(),
+        StoryScreen(),
         const SettingScreen(),
       ][currentPageIndex],
     );

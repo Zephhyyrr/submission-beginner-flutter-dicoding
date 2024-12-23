@@ -12,17 +12,6 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         'StoryApp',
         style: TextStyle(color: Colors.white),
       ),
-      actions: [
-        IconButton(
-          icon: const Icon(
-            Icons.search,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            // Action for the search icon
-          },
-        ),
-      ],
     );
   }
 

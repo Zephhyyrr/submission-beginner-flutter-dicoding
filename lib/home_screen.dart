@@ -44,6 +44,128 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Category Story',
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {
+                    // Navigator.push
+                  },
+                  child: Card(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.width * 0.15,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.movie),
+                          Text(
+                            'Movies',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    // Navigator.push
+                  },
+                  child: Card(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.width * 0.15,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.book),
+                          Text(
+                            'Books',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    // Navigator.push
+                  },
+                  child: Card(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.width * 0.15,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.music_note),
+                          Text(
+                            'Music',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    // Navigator.push
+                  },
+                  child: Card(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.width * 0.15,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.games),
+                          Text(
+                            'Games',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    // Navigator.push
+                  },
+                  child: Card(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.15,
+                      height: MediaQuery.of(context).size.width * 0.15,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.travel_explore),
+                          Text(
+                            'Travel',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
