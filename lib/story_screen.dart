@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_bar.dart'; 
+import 'app_bar.dart';
 import 'story_list.dart' as story_list;
 import 'detail_screen.dart';
 
