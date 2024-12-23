@@ -7,15 +7,14 @@ var informationTextStyle = const TextStyle(fontFamily: 'Oxygen');
 class DetailScreen extends StatelessWidget {
   final Story story;
 
-  const DetailScreen({Key? key, required this.story}) : super(key: key);
+  const DetailScreen({super.key, required this.story});
 
   @override
   Widget build(BuildContext context) {
-    // Mengatur warna status bar (notification bar) menjadi biru
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        statusBarColor: Color(0xFF438BFF), // Warna biru pada status bar
-        statusBarIconBrightness: Brightness.light, // Warna ikon di status bar
+        statusBarColor: Color(0xFF438BFF),
+        statusBarIconBrightness: Brightness.light,
       ),
     );
 
@@ -24,19 +23,24 @@ class DetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            // Gambar dengan SafeArea agar tidak menabrak status bar
-            SafeArea(
-              child: Stack(
-                children: <Widget>[
-                  story.imageAsset.isNotEmpty
-                      ? Image.network(
+            Stack(
+              children: <Widget>[
+                story.imageAsset.isNotEmpty
+                    ? Container(
+                        margin: const EdgeInsets.only(
+                            top: 25.0), // Memberikan jarak ke bawah status bar
+                        child: Image.network(
                           story.imageAsset, // Menggunakan URL gambar
                           fit: BoxFit.cover,
                           width: double.infinity,
                           height: 250.0,
-                        )
-                      : const SizedBox.shrink(),
-                  Padding(
+                        ),
+                      )
+                    : const SizedBox.shrink(),
+
+                // SafeArea memastikan konten tidak menutupi area status bar
+                SafeArea(
+                  child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -53,12 +57,11 @@ class DetailScreen extends StatelessWidget {
                             },
                           ),
                         ),
-                        const FavoriteButton(),
                       ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             Container(
               margin: const EdgeInsets.only(top: 16.0),
@@ -120,14 +123,17 @@ class DetailScreen extends StatelessWidget {
           ],
         ),
       ),
+      // Menambahkan FloatingActionButton untuk favorite
+      floatingActionButton: const FavoriteButton(),
     );
   }
 }
 
 class FavoriteButton extends StatefulWidget {
-  const FavoriteButton({Key? key}) : super(key: key);
+  const FavoriteButton({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _FavoriteButtonState createState() => _FavoriteButtonState();
 }
 
@@ -136,14 +142,15 @@ class _FavoriteButtonState extends State<FavoriteButton> {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(
+    return FloatingActionButton(
+      backgroundColor: Colors.blue, // Warna latar belakang FAB
+      child: Icon(
         isFavorite ? Icons.favorite : Icons.favorite_border,
-        color: Colors.red,
+        color: Colors.white, // Warna ikon FAB
       ),
       onPressed: () {
         setState(() {
-          isFavorite = !isFavorite;
+          isFavorite = !isFavorite; // Toggle status favorite
         });
       },
     );

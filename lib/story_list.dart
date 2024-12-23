@@ -130,41 +130,47 @@ var storyList = [
     subtitle: 'The Start of a Magical Journey',
     description:
         'A young boy discovers that he is a wizard and attends a magical school where he uncovers dark secrets about his past.',
-    imageAsset: 'https://example.com/harry-potter.jpg',
+    imageAsset:
+        'https://m.media-amazon.com/images/M/MV5BNTU1MzgyMDMtMzBlZS00YzczLThmYWEtMjU3YmFlOWEyMjE1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
   ),
   Story(
     title: 'The Pursuit of Happyness',
     subtitle: 'A Fight for a Better Life',
     description:
         'A struggling salesman takes custody of his son as he begins a life-changing journey to success.',
-    imageAsset: 'https://example.com/pursuit-of-happyness.jpg',
+    imageAsset:
+        'https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/title-key-art/thepursuitofhappyness_onesheet_1400x2100.png?itok=BSpvsOsJ',
   ),
   Story(
     title: 'The Avengers',
     subtitle: 'Assembling the Heroes',
     description:
         'Earth’s mightiest heroes must come together to stop an alien invasion and protect humanity.',
-    imageAsset: 'https://example.com/avengers.jpg',
+    imageAsset:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBzT099X5y7WMBqa8kMb-jBdcgjJtALSjygw&s',
   ),
   Story(
     title: 'Frozen',
     subtitle: 'A Tale of Sisters',
     description:
         'When their kingdom is trapped in an eternal winter, two sisters must join forces to stop a curse and restore peace.',
-    imageAsset: 'https://example.com/frozen.jpg',
+    imageAsset:
+        'https://lumiere-a.akamaihd.net/v1/images/hb_frozenanniversaryrefresh_fallback_mobile_2326_v2_f49_77e68f09.jpeg?region=0%2C0%2C640%2C480',
   ),
   Story(
     title: 'Shrek',
     subtitle: 'An Ogre’s Fairytale',
     description:
         'An ogre sets out on a quest to rescue a princess and save his swamp from a group of unwanted fairy tale creatures.',
-    imageAsset: 'https://example.com/shrek.jpg',
+    imageAsset:
+        'https://cdn0-production-images-kly.akamaized.net/WoVtv1m7286XzeoddaiJGkuGQ28=/800x1066/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4882915/original/051750100_1720075343-download__2_.jpeg',
   ),
   Story(
     title: 'Back to the Future',
     subtitle: 'A Time Travel Adventure',
     description:
         'A teenager is accidentally sent 30 years into the past in a time machine built by his close friend, the eccentric Dr. Emmett Brown.',
-    imageAsset: 'https://example.com/back-to-the-future.jpg',
+    imageAsset:
+        'https://images.squarespace-cdn.com/content/5c62c09c4d546e27dc1016c7/bb899014-6c80-4956-b3e2-4169931edbf5/ff68e65f5d5ee5dd98fc71c1218a71e3e1008668880b6430d4e912ebf5bda412._UR1920%2C1080_.jpg?format=1500w&content-type=image%2Fjpeg',
   ),
 ];

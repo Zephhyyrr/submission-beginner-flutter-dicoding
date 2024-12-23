@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);
@@ -11,28 +12,10 @@ class SettingScreen extends StatelessWidget {
         children: <Widget>[
           Card(
             child: ListTile(
-              leading: const Icon(Icons.account_circle),
-              title: const Text('Account Settings'),
-              onTap: () {
-                // Action on tap
-              },
-            ),
-          ),
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.lock),
-              title: const Text('Privacy Settings'),
-              onTap: () {
-                // Action on tap
-              },
-            ),
-          ),
-          Card(
-            child: ListTile(
               leading: const Icon(Icons.exit_to_app),
-              title: const Text('Logout'),
+              title: const Text('Close App'),
               onTap: () {
-                // Action on tap
+                SystemNavigator.pop();
               },
             ),
           ),

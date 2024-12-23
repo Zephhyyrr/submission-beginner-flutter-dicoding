@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'story_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -60,13 +62,13 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 GestureDetector(
                   onTap: () {
-                    // Navigator.push
+                    MaterialPageRoute(builder: (context) => StoryScreen());
                   },
                   child: Card(
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.width * 0.15,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Icon(Icons.movie),
@@ -87,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.width * 0.15,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Icon(Icons.book),
@@ -108,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.width * 0.15,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Icon(Icons.music_note),
@@ -129,7 +131,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.width * 0.15,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Icon(Icons.games),
@@ -150,7 +152,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.15,
                       height: MediaQuery.of(context).size.width * 0.15,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Icon(Icons.travel_explore),
