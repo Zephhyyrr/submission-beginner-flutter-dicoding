@@ -4,7 +4,7 @@ import 'story_list.dart' as story_list;
 import 'detail_screen.dart';
 
 class StoryScreen extends StatelessWidget {
-  StoryScreen({Key? key}) : super(key: key);
+  const StoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

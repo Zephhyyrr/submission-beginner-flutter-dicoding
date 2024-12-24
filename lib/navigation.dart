@@ -4,7 +4,7 @@ import 'story_screen.dart';
 import 'setting_screen.dart';
 
 class Navigation extends StatefulWidget {
-  const Navigation({Key? key}) : super(key: key);
+  const Navigation({super.key});
 
   @override
   State<Navigation> createState() => _NavigationState();
