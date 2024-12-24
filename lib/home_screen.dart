@@ -5,7 +5,7 @@ import 'story_list.dart';
 import 'story_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -123,15 +123,15 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   _buildCategoryCard(
-                      context, Icons.movie, 'Movies', StoryScreen()),
+                      context, Icons.movie, 'Movies', const StoryScreen()),
                   _buildCategoryCard(
-                      context, Icons.book, 'Books', StoryScreen()),
+                      context, Icons.book, 'Books', const StoryScreen()),
                   _buildCategoryCard(
-                      context, Icons.music_note, 'Music', StoryScreen()),
+                      context, Icons.music_note, 'Music', const StoryScreen()),
                   _buildCategoryCard(
-                      context, Icons.games, 'Games', StoryScreen()),
-                  _buildCategoryCard(
-                      context, Icons.travel_explore, 'Travel', StoryScreen()),
+                      context, Icons.games, 'Games', const StoryScreen()),
+                  _buildCategoryCard(context, Icons.travel_explore, 'Travel',
+                      const StoryScreen()),
                 ],
               ),
             ),
